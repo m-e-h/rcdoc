@@ -4,17 +4,18 @@
 
 
 
-add_action( 'after_setup_theme', 'wpmdl_setup' );
+add_action( 'after_setup_theme', 'rcdoc_setup' );
 add_action( 'wp_enqueue_scripts', 'wpmdl_scripts' );
 add_action( 'tha_header_after', 'logged_in_drawer' );
 add_action( 'tha_header_bottom', 'mdl_search_form' );
 add_action( 'tha_header_before', 'header_right_widget' );
 
+require get_stylesheet_directory() . '/inc/post-types.php';
 
 
 
 
-function wpmdl_setup() {
+function rcdoc_setup() {
 	attr_trumps( array(
 
 
