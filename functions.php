@@ -41,7 +41,7 @@ function rcdoc_setup() {
 		//'content_archive'         => 'flex flex-wrap flex-justify',
 		// ENTRY
 		'post'                    	=> 'mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-card u-py4 u-px3 u-text-gray u-overflow-visible',
-		'post_archive'            	=> 'mdl-cell--6-col-desktop',
+		'post_archive'            	=> 'mdl-cell mdl-cell--6-col-desktop mdl-card mdl-shadow--2dp u-overflow-visible',
 
 		'page_header'             	=> 'u-1/1 u-text-center',
 
@@ -49,11 +49,11 @@ function rcdoc_setup() {
 		'page_title'    		  	=> 'u-h1 u-m0 u-py3',
 		'archive_description'     	=> '',
 
-		'entry_header'            	=> 'mdl-card__title u-pt0 u-mxn2',
-		'entry_content'           	=> '',
+		'entry_header'            	=> 'mdl-card__title',
+		'entry_content'           	=> 'mdl-card__supporting-text',
 		'entry_content_wide'      	=> '',
-		'entry_summary'           	=> 'container px2 px3@md',
-		'entry_footer'            	=> 'container',
+		'entry_summary'           	=> 'mdl-card__supporting-text',
+		'entry_footer'            	=> 'u-mt-auto mdl-card__actions mdl-card--border',
 
 		'nav_single'              	=> '',
 		'nav_archive'             	=> '',
@@ -190,18 +190,11 @@ function logged_in_drawer() {
 
 function mdl_search_form() {
 ?>
-<form class="u-ml-auto" method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-	<!--label for="s" class="assistive-text"><?php _e( 'Search', 'my-theme' ); ?></label-->
-	<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
-  mdl-textfield--floating-label mdl-textfield--align-right">
-		<label class="mdl-button mdl-js-button mdl-button--icon u-m0" for="header-s">
-			<i class="material-icons">search</i>
-		</label>
-		<div class="mdl-textfield__expandable-holder">
-			<input type="text" name="header-s" id="header-s" class="u-lh-2 search-field u-p0 u-border0 u-text-white u-bg-frost-1 mdl-textfield__input" />
-			<label class="u-m0 u-text-white u-opacity mdl-textfield__label" for="header-s"><?php _e( 'Search', 'my-theme' ); ?></label>
-		</div><!-- /.mdl-textfield__expandable-holder -->
-	</div><!-- /.mdl-textfield -->
+<form action="/" method="get" class="mdl-textfield mdl-js-textfield mdl-textfield--expandable u-ml-auto" action="<?php echo home_url( '/' ); ?>">
+	<label class="mdl-button mdl-js-button mdl-button--icon u-m0" for="search"><i class="material-icons">search</i></label>
+<div class="mdl-textfield__expandable-holder">
+	<input class="mdl-textfield__input u-lh-2 search-field u-p0 u-border0 u-text-white u-bg-frost-1" type="text" name="s" id="search" value="<?php the_search_query(); ?>" />
+</div>
 </form>
 <?php
 }
