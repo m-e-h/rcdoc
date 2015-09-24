@@ -102,3 +102,29 @@
     content: "";
     background: linear-gradient(to right,rgba(61, 153, 112,0),rgba(61, 153, 112,1));
 }
+
+
+.page_item > a {
+    display: block;
+border: none;
+color: rgba(0,0,0,.87);
+background-color: transparent;
+text-align: left;
+margin: 0;
+padding: 0 16px;
+outline-color: #bdbdbd;
+position: relative;
+overflow: hidden;
+font-size: 14px;
+font-weight: 400;
+letter-spacing: 0;
+text-decoration: none;
+cursor: pointer;
+height: 48px;
+line-height: 48px;
+white-space: nowrap;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}

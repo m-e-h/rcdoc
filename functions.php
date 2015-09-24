@@ -40,7 +40,7 @@ function rcdoc_setup() {
 		'content_with_sidebar'    	=> 'mdl-cell mdl-grid u-m0 u-p0 u-1/1 u-2/3@md',
 		//'content_archive'         => 'flex flex-wrap flex-justify',
 		// ENTRY
-		'post'                    	=> 'mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-card u-py4 u-px3 u-text-gray',
+		'post'                    	=> 'mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-card u-py4 u-px3 u-text-gray u-overflow-visible',
 		'post_archive'            	=> 'mdl-cell--6-col-desktop',
 
 		'page_header'             	=> 'u-1/1 u-text-center',
