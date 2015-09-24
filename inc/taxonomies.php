@@ -29,7 +29,7 @@ function prefix_agencies_register_taxonomies() {
 
 			/* The rewrite handles the URL structure. */
 			'rewrite' => array(
-				'slug'         => 'agencies/system',
+				'slug'         => 'agencies',
 				'with_front'   => false,
 				'hierarchical' => true,
 				'ep_mask'      => EP_NONE
