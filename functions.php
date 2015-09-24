@@ -11,7 +11,7 @@ add_action( 'tha_header_bottom', 'mdl_search_form' );
 add_action( 'tha_header_before', 'header_right_widget' );
 
 require get_stylesheet_directory() . '/inc/post-types.php';
-
+require get_stylesheet_directory() . '/inc/taxonomies.php';
 
 
 
