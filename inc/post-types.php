@@ -92,7 +92,7 @@ function doc_parishs_register_post_types() {
 
 			/* Labels used when displaying the posts. */
 			'labels' => array(
-				'name'               => __( 'Parishs',                   	'rcdoc' ),
+				'name'               => __( 'Parishes',                   	'rcdoc' ),
 				'singular_name'      => __( 'Parish',                    	'rcdoc' ),
 				'menu_name'          => __( 'Parishes',                   	'rcdoc' ),
 				'name_admin_bar'     => __( 'Parishes',                    	'rcdoc' ),
