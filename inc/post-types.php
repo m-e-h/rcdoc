@@ -1,5 +1,6 @@
 <?php
 
+add_action( 'init', 'doc_documents_register_post_types' );
 add_action( 'init', 'doc_departments_register_post_types' );
 add_action( 'init', 'doc_parishs_register_post_types' );
 add_action( 'init', 'doc_schools_register_post_types' );
@@ -16,6 +17,104 @@ add_action( 'init', 'doc_properties_register_post_types' );
 add_action( 'init', 'doc_tribunals_register_post_types' );
 add_action( 'init', 'doc_vocations_register_post_types' );
 
+
+
+function doc_documents_register_post_types() {
+
+	register_post_type(
+		'document',
+		array(
+			'description'         => '',
+			'public'              => true,
+			'publicly_queryable'  => true,
+			'show_in_nav_menus'   => false,
+			'show_in_admin_bar'   => true,
+			'exclude_from_search' => false,
+			'show_ui'             => true,
+			'show_in_menu'        => true,
+			'menu_position'       => 60,
+			'menu_icon'           => 'dashicons-media-document',
+			'can_export'          => true,
+			'delete_with_user'    => false,
+			'hierarchical'        => false,
+			'has_archive'         => 'documents',
+			'query_var'           => 'document',
+			'capability_type'     => 'document',
+			'map_meta_cap'        => true,
+
+			/* Capabilities. */
+			'capabilities' => array(
+
+				// meta caps (don't assign these to roles)
+				'edit_post'              => 'edit_document',
+				'read_post'              => 'read_document',
+				'delete_post'            => 'delete_document',
+
+				// primitive/meta caps
+				'create_posts'           => 'create_documents',
+
+				// primitive caps used outside of map_meta_cap()
+				'edit_posts'             => 'edit_documents',
+				'edit_others_posts'      => 'manage_documents',
+				'publish_posts'          => 'manage_documents',
+				'read_private_posts'     => 'read',
+
+				// primitive caps used inside of map_meta_cap()
+				'read'                   => 'read',
+				'delete_posts'           => 'manage_documents',
+				'delete_private_posts'   => 'manage_documents',
+				'delete_published_posts' => 'manage_documents',
+				'delete_others_posts'    => 'manage_documents',
+				'edit_private_posts'     => 'edit_documents',
+				'edit_published_posts'   => 'edit_documents'
+			),
+
+			/* The rewrite handles the URL structure. */
+			'rewrite' => array(
+				'slug'       => 'documents',
+				'with_front' => false,
+				'pages'      => true,
+				'feeds'      => true,
+				'ep_mask'    => EP_PERMALINK,
+			),
+
+			/* What features the post type supports. */
+			'supports' => array(
+                'title',
+				'excerpt',
+				'author',
+				'revisions',
+				'thumbnail',
+			),
+
+			/* Labels used when displaying the posts. */
+			'labels' => array(
+				'name'               => __( 'Documents',                   	'rcdoc' ),
+				'singular_name'      => __( 'Document',                    	'rcdoc' ),
+				'menu_name'          => __( 'Documents',                	'rcdoc' ),
+				'name_admin_bar'     => __( 'Documents',                    'rcdoc' ),
+				'add_new'            => __( 'Add New',                      'rcdoc' ),
+				'add_new_item'       => __( 'Add New Document',            	'rcdoc' ),
+				'edit_item'          => __( 'Edit Document',               	'rcdoc' ),
+				'new_item'           => __( 'New Document',                	'rcdoc' ),
+				'view_item'          => __( 'View Document',               	'rcdoc' ),
+				'search_items'       => __( 'Search Documents',            	'rcdoc' ),
+				'not_found'          => __( 'No Documents found',          	'rcdoc' ),
+				'not_found_in_trash' => __( 'No Documents found in trash', 	'rcdoc' ),
+				'all_items'          => __( 'Documents',                   	'rcdoc' ),
+			)
+		)
+	);
+
+	// Get the administrator role.
+	$role = get_role( 'administrator' );
+	// If the administrator role exists, add required capabilities for the plugin.
+	if ( ! empty( $role ) ) {
+		$role->add_cap( 'create_documents'     ); // Create new posts.
+		$role->add_cap( 'manage_documents'     ); // delete/publish existing posts.
+		$role->add_cap( 'edit_documents'       ); // Edit existing posts.
+	}
+}
 
 
 
@@ -390,6 +489,7 @@ function doc_vocations_register_post_types() {
 				'editor',
 				'author',
 				'thumbnail',
+				'page-attributes',
                 'post-formats'
 			),
 
@@ -489,6 +589,7 @@ function doc_tribunals_register_post_types() {
 				'editor',
 				'author',
 				'thumbnail',
+				'page-attributes',
                 'post-formats'
 			),
 
@@ -588,6 +689,7 @@ function doc_properties_register_post_types() {
 				'editor',
 				'author',
 				'thumbnail',
+				'page-attributes',
                 'post-formats'
 			),
 
@@ -687,6 +789,7 @@ function doc_plannings_register_post_types() {
 				'editor',
 				'author',
 				'thumbnail',
+				'page-attributes',
                 'post-formats'
 			),
 
@@ -786,6 +889,7 @@ function doc_liturgys_register_post_types() {
 				'editor',
 				'author',
 				'thumbnail',
+				'page-attributes',
                 'post-formats'
 			),
 
@@ -885,6 +989,7 @@ function doc_info_techs_register_post_types() {
 				'editor',
 				'author',
 				'thumbnail',
+				'page-attributes',
                 'post-formats'
 			),
 
@@ -984,6 +1089,7 @@ function doc_housings_register_post_types() {
 				'editor',
 				'author',
 				'thumbnail',
+				'page-attributes',
                 'post-formats'
 			),
 
@@ -1082,6 +1188,7 @@ function doc_hispanic_ministries_register_post_types() {
 				'editor',
 				'author',
 				'thumbnail',
+				'page-attributes',
                 'post-formats'
 			),
 
@@ -1181,6 +1288,7 @@ function doc_finances_register_post_types() {
 				'editor',
 				'author',
 				'thumbnail',
+				'page-attributes',
                 'post-formats'
 			),
 
@@ -1280,6 +1388,7 @@ function doc_developments_register_post_types() {
 				'editor',
 				'author',
 				'thumbnail',
+				'page-attributes',
                 'post-formats'
 			),
 
@@ -1379,6 +1488,7 @@ function doc_chancerys_register_post_types() {
 				'editor',
 				'author',
 				'thumbnail',
+				'page-attributes',
                 'post-formats'
 			),
 
@@ -1401,14 +1511,14 @@ function doc_chancerys_register_post_types() {
 		)
 	);
 
-// Get the administrator role.
-$role = get_role( 'administrator' );
-// If the administrator role exists, add required capabilities for the plugin.
-if ( ! empty( $role ) ) {
-	$role->add_cap( 'create_chancerys'     ); // Create new posts.
-	$role->add_cap( 'manage_chancerys'     ); // delete/publish existing posts.
-	$role->add_cap( 'edit_chancerys'       ); // Edit existing posts.
-}
+	// Get the administrator role.
+	$role = get_role( 'administrator' );
+	// If the administrator role exists, add required capabilities for the plugin.
+	if ( ! empty( $role ) ) {
+		$role->add_cap( 'create_chancerys'     ); // Create new posts.
+		$role->add_cap( 'manage_chancerys'     ); // delete/publish existing posts.
+		$role->add_cap( 'edit_chancerys'       ); // Edit existing posts.
+	}
 }
 
 
@@ -1478,6 +1588,7 @@ function doc_archives_register_post_types() {
 				'editor',
 				'author',
 				'thumbnail',
+				'page-attributes',
                 'post-formats'
 			),
 

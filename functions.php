@@ -22,12 +22,12 @@ function rcdoc_setup() {
 		'body'                    	=> '',
 		'site_container'          	=> 'mdl-layout mdl-js-layout mdl-layout--fixed-header',
 		'site_container_loggedin' 	=> 'mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer',
-		'layout_container'       	=> 'mdl-layout__content',
-		'layout_container_wide'   	=> 'mdl-layout__content',
-		'layout'              		=> 'u-p0 mdl-grid u-max-width',
-		'layout_wide'              	=> 'u-p0 mdl-grid',
-		'layout_sidebar_l'    		=> 'u-p0 mdl-grid u-max-width u-flex-rev',
-		'layout_sidebar_r'    		=> 'u-p0 mdl-grid u-max-width',
+		'layout'       		=> 'mdl-layout__content',
+		'layout_wide'   	=> 'mdl-layout__content',
+		'grid'              		=> 'u-p0 mdl-grid u-max-width',
+		'grid_1-wide'              	=> 'u-p0 mdl-grid',
+		'grid_2c-r'    				=> 'u-p0 mdl-grid u-max-width u-flex-rev',
+		'grid_2c-l'    				=> 'u-p0 mdl-grid u-max-width',
 
 		// SITE HEADER
 		'header'                  	=> 'u-static mdl-layout__header mdl-layout__header--waterfall',
@@ -42,6 +42,7 @@ function rcdoc_setup() {
 		// ENTRY
 		'post'                    	=> 'mdl-cell mdl-cell--12-col mdl-card u-py4 u-px3 u-text-gray u-overflow-visible',
 		'post_archive'            	=> 'mdl-cell mdl-cell--6-col-desktop mdl-card mdl-shadow--2dp u-overflow-visible',
+        'post_featured'           	=> 'u-flexed-first u-1/1',
 
 		'page_header'             	=> 'u-1/1 u-text-center',
 
