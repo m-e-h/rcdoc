@@ -10,7 +10,7 @@
 
         <?php tha_entry_top(); ?>
 <?php
-$document = get_field('document');
+$document = get_field('doc_document');
 
 if( $document ):
 
