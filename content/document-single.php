@@ -10,12 +10,12 @@
 
         <?php tha_entry_top(); ?>
 <?php
-$document = get_field('doc_document');
+$file = get_field('doc_document');
 
-if( $document ):
+if( $file ):
 
 
-echo '<iframe class="pdf-responsive" data-true-height="800px" data-true-width="600px" max-width="1200px" height="800px" frameBorder="0" src="' . esc_url( '//mozilla.github.io/pdf.js/web/viewer.html?file=https://cors-anywhere.herokuapp.com/' . $document['url'] ) . '"></iframe>';
+echo '<iframe class="pdf-responsive" data-true-height="800px" data-true-width="600px" width="800px" height="800px" frameBorder="0" src="' . esc_url( '//mozilla.github.io/pdf.js/web/viewer.html?file=https://cors-anywhere.herokuapp.com/' . $file['url'] ) . '"></iframe>';
 
 endif;
 ?>
