@@ -40,7 +40,7 @@ function rcdoc_setup() {
 		'content_with_sidebar'    	=> 'mdl-cell mdl-grid u-m0 u-p0 u-1/1 u-2/3@md',
 		'content_archive'         	=> 'facetwp-template',
 		// ENTRY
-		'post'                    	=> 'mdl-cell mdl-cell--12-col mdl-card u-py4 u-px3 u-text-gray u-overflow-visible',
+		'post'                    	=> 'mdl-cell u-mx0 u-1/1 mdl-card u-py4 u-px3 u-text-gray u-overflow-visible',
 		'post_archive'            	=> 'mdl-cell mdl-cell--6-col-desktop mdl-card mdl-shadow--2dp u-overflow-visible',
         'post_featured'           	=> 'u-flexed-first u-1/1',
 
@@ -160,7 +160,7 @@ function abraham_widgets() {
 		'name'          => __( 'Primary', 'abraham' ),
 		'before_title'  => '<div class="mdl-card__title u-mtn2 u-mxn2"><h2 class="mdl-card__title-text widget-title">',
 		'after_title'   => '</h2></div>',
-		'before_widget' => '<section class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp u-p2 u-list-reset">',
+		'before_widget' => '<section class="mdl-card mdl-cell u-1/1 u-mx0 mdl-shadow--2dp u-p2 u-list-reset">',
 		'after_widget'  => '</section>',
 	));
 
