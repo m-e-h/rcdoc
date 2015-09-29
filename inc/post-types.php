@@ -1506,8 +1506,8 @@ function doc_chancerys_register_post_types() {
 
 			/* Labels used when displaying the posts. */
 			'labels' => array(
-				'name'               => __( 'Chancery Posts',                   'rcdoc' ),
-				'singular_name'      => __( 'Chancery Post',                    'rcdoc' ),
+				'name'               => __( 'Chancery',                   'rcdoc' ),
+				'singular_name'      => __( 'Chancery',                    'rcdoc' ),
 				'menu_name'          => __( 'Chancery',                   		'rcdoc' ),
 				'name_admin_bar'     => __( 'Chancery',                    		'rcdoc' ),
 				'add_new'            => __( 'Add New',                        	'rcdoc' ),

@@ -6,9 +6,12 @@
 
     <?php tha_entry_before(); ?>
 
+    <?php if (hybrid_post_has_content()) : ?>
+
     <article <?php hybrid_attr('post'); ?>>
 
         <?php tha_entry_top(); ?>
+
 
             <div <?php hybrid_attr('entry-content'); ?>>
                 <?php tha_entry_content_before(); ?>
@@ -29,6 +32,8 @@
     <?php tha_entry_bottom(); ?>
 
     </article>
+
+    <?php endif; // Check for content ?>
 
     <?php tha_entry_after(); ?>
 
@@ -56,7 +61,7 @@
         <?php
         while ( $bishop_query->have_posts() ) {
             $bishop_query->the_post();
-            get_template_part('components/card');
+            get_template_part('components/card', get_post_format() );
         }
         ?>
     </div>
