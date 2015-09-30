@@ -844,7 +844,7 @@ function doc_multiculturals_register_post_types() {
 			'show_ui'             => true,
 			'show_in_menu'        => true,
 			'menu_position'       => 100,
-			'menu_icon'           => 'dashicons-shield-alt',
+			'menu_icon'           => 'dashicons-translation',
 			'can_export'          => true,
 			'delete_with_user'    => false,
 			'hierarchical'        => false,
@@ -883,7 +883,7 @@ function doc_multiculturals_register_post_types() {
 
 			/* The rewrite handles the URL structure. */
 			'rewrite' => array(
-				'slug'       => 'multiculturals',
+				'slug'       => 'multicultural-ministries',
 				'with_front' => false,
 				'pages'      => true,
 				'feeds'      => true,
