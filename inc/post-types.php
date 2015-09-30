@@ -12,6 +12,7 @@ add_action( 'init', 'doc_hispanic_ministries_register_post_types' );
 add_action( 'init', 'doc_housings_register_post_types' );
 add_action( 'init', 'doc_info_techs_register_post_types' );
 add_action( 'init', 'doc_liturgys_register_post_types' );
+add_action( 'init', 'doc_multicultural_ministries_register_post_types' );
 add_action( 'init', 'doc_plannings_register_post_types' );
 add_action( 'init', 'doc_properties_register_post_types' );
 add_action( 'init', 'doc_tribunals_register_post_types' );
