@@ -222,7 +222,7 @@ function query_post_type($query) {
     if($post_type)
         $post_type = $post_type;
     else
-        $post_type = array('post','info_tech','multicultural','chancery','vocation'); // replace cpt to your custom post type
+        $post_type = array('post','multicultural','chancery','vocation'); // replace cpt to your custom post type
     $query->set('post_type',$post_type);
     return $query;
     }
