@@ -6,8 +6,6 @@
 
     <?php tha_entry_before(); ?>
 
-    <?php if (hybrid_post_has_content()) : ?>
-
     <article <?php hybrid_attr('post'); ?>>
 
         <?php tha_entry_top(); ?>
@@ -31,8 +29,6 @@
     <?php tha_entry_bottom(); ?>
 
     </article>
-
-    <?php endif; // Check for content ?>
 
     <?php tha_entry_after(); ?>
 
