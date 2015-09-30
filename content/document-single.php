@@ -15,7 +15,7 @@ $file = get_field('doc_document');
 if( $file ):
 
 
-echo '<iframe class="pdf-responsive" data-true-height="800px" data-true-width="600px" width="800px" height="800px" frameBorder="0" src="' . esc_url( '//mozilla.github.io/pdf.js/web/viewer.html?file=https://cors-anywhere.herokuapp.com/' . $file['url'] ) . '"></iframe>';
+echo '<iframe class="pdf-responsive" data-true-height="800px" data-true-width="600px" width="100%" height="800px" frameBorder="0" src="' . esc_url( '//mozilla.github.io/pdf.js/web/viewer.html?file=https://cors-anywhere.herokuapp.com/' . $file['url'] ) . '"></iframe>';
 
 endif;
 ?>

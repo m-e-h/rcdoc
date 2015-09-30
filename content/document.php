@@ -9,7 +9,7 @@
     <article <?php hybrid_attr('post'); ?>>
 
         <?php tha_entry_top(); ?>
-yooooooooooooo
+
             <header <?php hybrid_attr('entry-header'); ?>>
                 <?php
                     get_the_image(array(
@@ -17,20 +17,9 @@ yooooooooooooo
                     ));
                 ?>
                 <h2 <?php hybrid_attr('entry-title'); ?>>
-                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    <a href="<?php the_permalink(); ?>"><i class="material-icons">&#xE24D;</i> <?php the_title(); ?></a>
                 </h2>
             </header>
-
-            <div <?php hybrid_attr('entry-summary'); ?>>
-                <?php tha_entry_content_before(); ?>
-                <?php the_excerpt(); ?>
-                <?php tha_entry_content_after(); ?>
-            </div>
-
-            <footer <?php hybrid_attr('entry-footer'); ?>>
-                <a href="<?php the_permalink(); ?>" class="mdl-button mdl-js-button mdl-js-ripple-effect"><?php esc_html_e( 'More', 'abraham' ); ?></a>
-                <?php get_template_part('components/child', 'links'); ?>
-            </footer>
 
     <?php tha_entry_bottom(); ?>
 

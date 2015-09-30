@@ -1,19 +1,5 @@
-/**
- * Theme Name:  WPMDL
- * Theme URI:   https://github.com/m-e-h/wpmdl
- * Description: MDL child theme.
- * Version:     1.0.0
- * Author:      Marty Helmick
- * Author URI:  https://github.com/m-e-h
- * Tags:
- * Domain Path: /languages/
- * License:     GNU General Public License v2.0 or later
- * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Template:    abraham
- */
-
 // Variables and mixins
-@import "variables";
+//@import "variables";
 @import "custom-variables";
 @import "mixins";
 
@@ -92,20 +78,44 @@
   display: block;
 }
 
-// .menu-primary {
-// box-shadow: none!important;
-// border: 0!important;
-// width: 100%!important;
-// height: 85px!important;
-// -webkit-flex-shrink: 0;
-// -ms-flex-negative: 0;
-// flex-shrink: 0;
-// padding: 0 16px 0 24px!important;
-// overflow-x: auto!important;
-// overflow-y: hidden!important;
-// -webkit-user-select: none;
-// -moz-user-select: none;
-// -ms-user-select: none;
-// user-select: none;
-// margin-bottom: -16px!important;
-// }
+.account-dropdown:after {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 30px;
+    content: "";
+    background: linear-gradient(to right,rgba(61, 153, 112,0),rgba(61, 153, 112,1));
+}
+
+
+.page_item > a {
+    display: block;
+border: none;
+color: rgba(0,0,0,.87);
+background-color: transparent;
+text-align: left;
+margin: 0;
+padding: 0 16px;
+outline-color: #bdbdbd;
+position: relative;
+overflow: hidden;
+font-size: 14px;
+font-weight: 400;
+letter-spacing: 0;
+text-decoration: none;
+cursor: pointer;
+height: 48px;
+line-height: 48px;
+white-space: nowrap;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+button.simplefavorite-button {
+    padding: 0;
+    background-color: transparent;
+}

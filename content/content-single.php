@@ -6,6 +6,8 @@
 
     <?php tha_entry_before(); ?>
 
+    <?php if (hybrid_post_has_content()) : ?>
+
     <article <?php hybrid_attr('post'); ?>>
 
         <?php tha_entry_top(); ?>
@@ -30,6 +32,8 @@
 
     </article>
 
+    <?php endif; // Check for content ?>
+
     <?php tha_entry_after(); ?>
 
     <?php endwhile; ?>
@@ -40,6 +44,8 @@
     'prev_text'          => __( 'Previous page', 'abraham' ),
     'next_text'          => __( 'Next page', 'abraham' ),
     ) ); ?>
+
+    <?php get_template_part('components/loop', get_the_slug() ); ?>
 
 <?php
 endif;

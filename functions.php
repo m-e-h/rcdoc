@@ -32,7 +32,7 @@ function rcdoc_setup() {
 		// SITE HEADER
 		'header'                  	=> 'u-static mdl-layout__header mdl-layout__header--waterfall',
 		'branding'                	=> 'mdl-layout__header-row',
-		'site_title'              	=> 'mdl-layout-title color-inherit u-fixed@md',
+		'site_title'              	=> 'mdl-layout-title color-inherit',
 		//'site_description'        => 'h3 bold m0 muted',
 
 		// CONTENT
