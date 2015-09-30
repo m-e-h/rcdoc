@@ -829,6 +829,107 @@ function doc_plannings_register_post_types() {
 
 
 
+function doc_multicultural_ministries_register_post_types() {
+
+	register_post_type(
+		'multicultural_ministry',
+		array(
+			'description'         => '',
+			'public'              => true,
+			'publicly_queryable'  => true,
+			'show_in_nav_menus'   => false,
+			'show_in_admin_bar'   => true,
+			'exclude_from_search' => false,
+			'show_ui'             => true,
+			'show_in_menu'        => true,
+			'menu_position'       => 100,
+			'menu_icon'           => 'dashicons-share-alt',
+			'can_export'          => true,
+			'delete_with_user'    => false,
+			'hierarchical'        => false,
+			'taxonomies'          => array( 'category', 'post_tag' ),
+			'has_archive'         => 'multicultural_ministries',
+			'query_var'           => 'multicultural_ministry',
+			'capability_type'     => 'multicultural_ministry',
+			'map_meta_cap'        => true,
+
+			/* Capabilities. */
+			'capabilities' => array(
+
+				// meta caps (don't assign these to roles)
+				'edit_post'              => 'edit_multicultural_ministry',
+				'read_post'              => 'read_multicultural_ministry',
+				'delete_post'            => 'delete_multicultural_ministry',
+
+				// primitive/meta caps
+				'create_posts'           => 'create_multicultural_ministries',
+
+				// primitive caps used outside of map_meta_cap()
+				'edit_posts'             => 'edit_multicultural_ministries',
+				'edit_others_posts'      => 'manage_multicultural_ministries',
+				'publish_posts'          => 'manage_multicultural_ministries',
+				'read_private_posts'     => 'read',
+
+				// primitive caps used inside of map_meta_cap()
+				'read'                   => 'read',
+				'delete_posts'           => 'manage_multicultural_ministries',
+				'delete_private_posts'   => 'manage_multicultural_ministries',
+				'delete_published_posts' => 'manage_multicultural_ministries',
+				'delete_others_posts'    => 'manage_multicultural_ministries',
+				'edit_private_posts'     => 'edit_multicultural_ministries',
+				'edit_published_posts'   => 'edit_multicultural_ministries'
+			),
+
+			/* The rewrite handles the URL structure. */
+			'rewrite' => array(
+				'slug'       => 'multicultural_ministries',
+				'with_front' => false,
+				'pages'      => true,
+				'feeds'      => true,
+				'ep_mask'    => EP_PERMALINK,
+			),
+
+			/* What features the post type supports. */
+			'supports' => array(
+                'title',
+				'editor',
+				'author',
+				'thumbnail',
+				'page-attributes',
+                'post-formats'
+			),
+
+			/* Labels used when displaying the posts. */
+			'labels' => array(
+				'name'               => __( 'Multicultural Ministries Posts',                   'rcdoc' ),
+				'singular_name'      => __( 'Multicultural Ministries Post',                    'rcdoc' ),
+				'menu_name'          => __( 'Multicultural Ministry',                   		'rcdoc' ),
+				'name_admin_bar'     => __( 'Multicultural Ministry',                    		'rcdoc' ),
+				'add_new'            => __( 'Add New',                        					'rcdoc' ),
+				'add_new_item'       => __( 'Add New Multicultural Ministries Post',            'rcdoc' ),
+				'edit_item'          => __( 'Edit Multicultural Ministries Post',               'rcdoc' ),
+				'new_item'           => __( 'New Multicultural Ministries Post',                'rcdoc' ),
+				'view_item'          => __( 'View Multicultural Ministries Post',               'rcdoc' ),
+				'search_items'       => __( 'Search Multicultural Ministries Posts',            'rcdoc' ),
+				'not_found'          => __( 'No Multicultural Ministries Posts found',          'rcdoc' ),
+				'not_found_in_trash' => __( 'No Multicultural Ministries Posts found in trash', 'rcdoc' ),
+				'all_items'          => __( 'Multicultural Ministries Posts',                   'rcdoc' ),
+			)
+		)
+	);
+
+	// Get the administrator role.
+	$role = get_role( 'administrator' );
+	// If the administrator role exists, add required capabilities for the plugin.
+	if ( ! empty( $role ) ) {
+		$role->add_cap( 'create_multicultural_ministries'     ); // Create new posts.
+		$role->add_cap( 'manage_multicultural_ministries'     ); // delete/publish existing posts.
+		$role->add_cap( 'edit_multicultural_ministries'       ); // Edit existing posts.
+	}
+}
+
+
+
 function doc_liturgys_register_post_types() {
 
 	register_post_type(
