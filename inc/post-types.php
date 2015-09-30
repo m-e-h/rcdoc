@@ -7,6 +7,7 @@ add_action( 'init', 'doc_schools_register_post_types' );
 add_action( 'init', 'doc_archives_register_post_types' );
 add_action( 'init', 'doc_chancerys_register_post_types' );
 add_action( 'init', 'doc_developments_register_post_types' );
+add_action( 'init', 'doc_deacons_register_post_types' );
 add_action( 'init', 'doc_finances_register_post_types' );
 add_action( 'init', 'doc_hispanic_ministries_register_post_types' );
 add_action( 'init', 'doc_housings_register_post_types' );
@@ -1534,6 +1535,106 @@ function doc_developments_register_post_types() {
 	}
 }
 
+
+
+function doc_deacons_register_post_types() {
+
+	register_post_type(
+		'deacon',
+		array(
+			'description'         => '',
+			'public'              => true,
+			'publicly_queryable'  => true,
+			'show_in_nav_menus'   => false,
+			'show_in_admin_bar'   => true,
+			'exclude_from_search' => false,
+			'show_ui'             => true,
+			'show_in_menu'        => true,
+			'menu_position'       => 100,
+			'menu_icon'           => 'dashicons-shield-alt',
+			'can_export'          => true,
+			'delete_with_user'    => false,
+			'hierarchical'        => false,
+			'taxonomies'          => array( 'category', 'post_tag' ),
+			'has_archive'         => 'deacons',
+			'query_var'           => 'deacon',
+			'capability_type'     => 'deacon',
+			'map_meta_cap'        => true,
+
+			/* Capabilities. */
+			'capabilities' => array(
+
+				// meta caps (don't assign these to roles)
+				'edit_post'              => 'edit_deacon',
+				'read_post'              => 'read_deacon',
+				'delete_post'            => 'delete_deacon',
+
+				// primitive/meta caps
+				'create_posts'           => 'create_deacons',
+
+				// primitive caps used outside of map_meta_cap()
+				'edit_posts'             => 'edit_deacons',
+				'edit_others_posts'      => 'manage_deacons',
+				'publish_posts'          => 'manage_deacons',
+				'read_private_posts'     => 'read',
+
+				// primitive caps used inside of map_meta_cap()
+				'read'                   => 'read',
+				'delete_posts'           => 'manage_deacons',
+				'delete_private_posts'   => 'manage_deacons',
+				'delete_published_posts' => 'manage_deacons',
+				'delete_others_posts'    => 'manage_deacons',
+				'edit_private_posts'     => 'edit_deacons',
+				'edit_published_posts'   => 'edit_deacons'
+			),
+
+			/* The rewrite handles the URL structure. */
+			'rewrite' => array(
+				'slug'       => 'deacons',
+				'with_front' => false,
+				'pages'      => true,
+				'feeds'      => true,
+				'ep_mask'    => EP_PERMALINK,
+			),
+
+			/* What features the post type supports. */
+			'supports' => array(
+                'title',
+				'editor',
+				'author',
+				'thumbnail',
+				'page-attributes',
+                'post-formats'
+			),
+
+			/* Labels used when displaying the posts. */
+			'labels' => array(
+				'name'               => __( 'Deacon',                   'rcdoc' ),
+				'singular_name'      => __( 'Deacon',                    'rcdoc' ),
+				'menu_name'          => __( 'Deacon',                   		'rcdoc' ),
+				'name_admin_bar'     => __( 'Deacon',                    		'rcdoc' ),
+				'add_new'            => __( 'Add New',                        	'rcdoc' ),
+				'add_new_item'       => __( 'Add New Deacon Post',            'rcdoc' ),
+				'edit_item'          => __( 'Edit Deacon Post',               'rcdoc' ),
+				'new_item'           => __( 'New Deacon Post',                'rcdoc' ),
+				'view_item'          => __( 'View Deacon Post',               'rcdoc' ),
+				'search_items'       => __( 'Search Deacon Posts',            'rcdoc' ),
+				'not_found'          => __( 'No Deacon posts found',          'rcdoc' ),
+				'not_found_in_trash' => __( 'No Deacon Posts found in trash', 'rcdoc' ),
+				'all_items'          => __( 'Deacon Posts',                   'rcdoc' ),
+			)
+		)
+	);
+
+	// Get the administrator role.
+	$role = get_role( 'administrator' );
+	// If the administrator role exists, add required capabilities for the plugin.
+	if ( ! empty( $role ) ) {
+		$role->add_cap( 'create_deacons'     ); // Create new posts.
+		$role->add_cap( 'manage_deacons'     ); // delete/publish existing posts.
+		$role->add_cap( 'edit_deacons'       ); // Edit existing posts.
+	}
+}
 
 
 function doc_chancerys_register_post_types() {
