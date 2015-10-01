@@ -11025,40 +11025,107 @@ fieldset[disabled] .mdl-textfield .mdl-textfield__label,
     background:         linear-gradient(to right, rgba(61, 153, 112, 0), #3d9970);
 }
 
-.page_item > a
-{
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 48px;
-
-    position: relative;
-
-    display: block;
-    overflow: hidden;
-
-    height: 48px;
-    margin: 0;
-    padding: 0 16px;
-
-    cursor: pointer;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none; 
-    text-align: left;
-    white-space: nowrap;
-    text-decoration: none;
-    letter-spacing: 0;
-
-    color: rgba(0, 0, 0, .87);
-    border: none;
-    outline-color: #bdbdbd;
-    background-color: transparent;
-}
-
 button.simplefavorite-button
 {
     padding: 0;
 
     background-color: transparent;
+}
+
+.dropdown-basic
+{
+    position: relative;
+}
+
+/**
+ * Expand/collapse icons
+ */
+/**
+ * Dropdown content
+ */
+/* line 35, /Users/cferdinandi/Sites/drop/src/sass/components/_drop-basic.scss */
+.dropdown-menu-basic
+{
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+
+    display: none;
+    visibility: hidden;
+    float: left;
+
+    box-sizing: border-box;
+    min-width: 200px;
+    margin-top: 3.5em;
+    margin-left: 0;
+
+    text-align: left;
+
+    border: .0725em solid #b8b8b8;
+    border-radius: .0725em;
+    background-color: #fff;
+    box-shadow: 0 .25em .5em rgba(0, 0, 0, .2);
+    /**
+	 * Switch up styling on small viewports
+	 */
+}
+
+/* line 52, /Users/cferdinandi/Sites/drop/src/sass/components/_drop-basic.scss */
+.dropdown-menu-basic.is-visible
+{
+    display: block;
+    visibility: visible; 
+
+    padding: .5em;
+}
+
+/* line 58, /Users/cferdinandi/Sites/drop/src/sass/components/_drop-basic.scss */
+.dropdown-menu-basic.dropdown-right
+{
+    right: 0; 
+    left: auto;
+}
+
+/* line 64, /Users/cferdinandi/Sites/drop/src/sass/components/_drop-basic.scss */
+.dropdown-menu-basic ul,
+.dropdown-menu-basic section
+{
+    margin-left: 0; 
+
+    list-style: none;
+}
+
+@media (max-width: 40em)
+{
+    /* line 73, /Users/cferdinandi/Sites/drop/src/sass/components/_drop-basic.scss */
+    .mdl-js .dropdown-menu-basic
+    {
+        position: static;
+
+        display: block;
+        visibility: visible; 
+        float: none;
+
+        min-width: 100%;
+
+        border: none;
+        box-shadow: none;
+    }
+    /* line 82, /Users/cferdinandi/Sites/drop/src/sass/components/_drop-basic.scss */
+    .mdl-js .dropdown-menu-basic.is-visible
+    {
+        padding: 0;
+    }
+}
+
+/*ul.mdl-menu {
+    width: 300px;
+}*/
+.acf-map
+{
+    width: 100%;
+    height: 400px;
+    margin: 20px 0; 
+
+    border: #ccc solid 1px;
 }

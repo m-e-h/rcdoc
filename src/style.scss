@@ -104,32 +104,96 @@
 }
 
 
-.page_item > a {
-    display: block;
-border: none;
-color: rgba(0,0,0,.87);
-background-color: transparent;
-text-align: left;
-margin: 0;
-padding: 0 16px;
-outline-color: #bdbdbd;
-position: relative;
-overflow: hidden;
-font-size: 14px;
-font-weight: 400;
-letter-spacing: 0;
-text-decoration: none;
-cursor: pointer;
-height: 48px;
-line-height: 48px;
-white-space: nowrap;
--webkit-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
-}
 
 button.simplefavorite-button {
     padding: 0;
     background-color: transparent;
+}
+
+
+
+
+.dropdown-basic {
+  position: relative;
+}
+
+/**
+ * Expand/collapse icons
+ */
+
+/**
+ * Dropdown content
+ */
+/* line 35, /Users/cferdinandi/Sites/drop/src/sass/components/_drop-basic.scss */
+.dropdown-menu-basic {
+  background-color: #ffffff;
+  border: 0.0725em solid #b8b8b8;
+  border-radius: 0.0725em;
+  box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  display: none;
+  float: left;
+  margin-top: 3.5em;
+  margin-left: 0;
+  min-width: 200px;
+  position: absolute;
+  text-align: left;
+  top: 0;
+  visibility: hidden;
+  z-index: 1000;
+  /**
+	 * Switch up styling on small viewports
+	 */
+}
+
+/* line 52, /Users/cferdinandi/Sites/drop/src/sass/components/_drop-basic.scss */
+.dropdown-menu-basic.is-visible {
+  display: block;
+  padding: 0.5em;
+  visibility: visible;
+}
+
+/* line 58, /Users/cferdinandi/Sites/drop/src/sass/components/_drop-basic.scss */
+.dropdown-menu-basic.dropdown-right {
+  left: auto;
+  right: 0;
+}
+
+/* line 64, /Users/cferdinandi/Sites/drop/src/sass/components/_drop-basic.scss */
+.dropdown-menu-basic ul,
+.dropdown-menu-basic section {
+  list-style: none;
+  margin-left: 0;
+}
+
+@media (max-width: 40em) {
+  /* line 73, /Users/cferdinandi/Sites/drop/src/sass/components/_drop-basic.scss */
+  .mdl-js .dropdown-menu-basic {
+    border: none;
+    box-shadow: none;
+    display: block;
+    float: none;
+    min-width: 100%;
+    position: static;
+    visibility: visible;
+  }
+  /* line 82, /Users/cferdinandi/Sites/drop/src/sass/components/_drop-basic.scss */
+  .mdl-js .dropdown-menu-basic.is-visible {
+    padding: 0;
+  }
+}
+
+
+/*ul.mdl-menu {
+    width: 300px;
+}*/
+
+
+
+
+.acf-map {
+    width: 100%;
+    height: 400px;
+    border: #ccc solid 1px;
+    margin: 20px 0;
 }
