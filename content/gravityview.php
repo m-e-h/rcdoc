@@ -5,7 +5,7 @@
     <?php while (have_posts()) : the_post(); ?>
 
     <?php tha_entry_before(); ?>
-
+YOOOOOOOOOOOOOOOOOOOOOOOOOOOOo
     <article <?php hybrid_attr('post'); ?>>
 
         <?php tha_entry_top(); ?>
