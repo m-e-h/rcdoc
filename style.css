@@ -11095,29 +11095,6 @@ button.simplefavorite-button
     list-style: none;
 }
 
-@media (max-width: 40em)
-{
-    /* line 73, /Users/cferdinandi/Sites/drop/src/sass/components/_drop-basic.scss */
-    .mdl-js .dropdown-menu-basic
-    {
-        position: static;
-
-        display: block;
-        visibility: visible; 
-        float: none;
-
-        min-width: 100%;
-
-        border: none;
-        box-shadow: none;
-    }
-    /* line 82, /Users/cferdinandi/Sites/drop/src/sass/components/_drop-basic.scss */
-    .mdl-js .dropdown-menu-basic.is-visible
-    {
-        padding: 0;
-    }
-}
-
 /*ul.mdl-menu {
     width: 300px;
 }*/

@@ -166,22 +166,22 @@ button.simplefavorite-button {
   margin-left: 0;
 }
 
-@media (max-width: 40em) {
-  /* line 73, /Users/cferdinandi/Sites/drop/src/sass/components/_drop-basic.scss */
-  .mdl-js .dropdown-menu-basic {
-    border: none;
-    box-shadow: none;
-    display: block;
-    float: none;
-    min-width: 100%;
-    position: static;
-    visibility: visible;
-  }
-  /* line 82, /Users/cferdinandi/Sites/drop/src/sass/components/_drop-basic.scss */
-  .mdl-js .dropdown-menu-basic.is-visible {
-    padding: 0;
-  }
-}
+// @media (max-width: 40em) {
+//   /* line 73, /Users/cferdinandi/Sites/drop/src/sass/components/_drop-basic.scss */
+//   .mdl-js .dropdown-menu-basic {
+//     border: none;
+//     box-shadow: none;
+//     display: block;
+//     float: none;
+//     min-width: 100%;
+//     position: static;
+//     visibility: visible;
+//   }
+//   /* line 82, /Users/cferdinandi/Sites/drop/src/sass/components/_drop-basic.scss */
+//   .mdl-js .dropdown-menu-basic.is-visible {
+//     padding: 0;
+//   }
+// }
 
 
 /*ul.mdl-menu {
