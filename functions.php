@@ -38,7 +38,7 @@ function rcdoc_setup() {
 		// CONTENT
 		'content'                 	=> 'mdl-cell mdl-grid u-m0 u-p0 u-1/1',
 		'content_with_sidebar'    	=> 'mdl-cell mdl-grid u-m0 u-p0 u-1/1 u-2/3@md',
-		'content_archive'         	=> 'facetwp-template',
+		//'content_archive'         	=> 'facetwp-template',
 		// ENTRY
 		'post'                    	=> 'mdl-cell u-mx0 u-1/1 mdl-card u-py4 u-px3 u-text-gray u-overflow-visible',
 		'post_archive'            	=> 'mdl-cell mdl-cell--6-col-desktop mdl-card mdl-shadow--2dp u-overflow-visible',
@@ -214,16 +214,18 @@ function header_right_widget() {
 	return hybrid_get_sidebar('header-right');
 }
 
-
+// Let custom post types use the categories
 add_filter('pre_get_posts', 'query_post_type');
 function query_post_type($query) {
-  if(is_category() || is_tag()) {
-    $post_type = get_query_var('post_type');
-    if($post_type)
-        $post_type = $post_type;
-    else
-        $post_type = array('post','multicultural','chancery','vocation'); // replace cpt to your custom post type
-    $query->set('post_type',$post_type);
-    return $query;
-    }
+	if ( ! is_admin() && $query->is_main_query() ) :
+		if(is_category() || is_tag()) {
+		    $post_type = get_query_var('post_type');
+		    if($post_type)
+		        $post_type = $post_type;
+		    else
+		        $post_type = array('post','multicultural','chancery','vocation'); // replace cpt to your custom post type
+		    $query->set('post_type',$post_type);
+		    return $query;
+		}
+endif;
 }
