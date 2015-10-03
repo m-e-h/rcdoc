@@ -22,8 +22,8 @@ function rcdoc_setup() {
 		'body'                    	=> '',
 		'site_container'          	=> 'mdl-layout mdl-js-layout mdl-layout--fixed-header',
 		'site_container_loggedin' 	=> 'mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer',
-		'layout'       		=> 'mdl-layout__content',
-		'layout_wide'   	=> 'mdl-layout__content',
+		'layout'       		        => 'mdl-layout__content',
+		'layout_wide'   	        => 'mdl-layout__content',
 		'grid'              		=> 'u-p0 mdl-grid u-max-width',
 		'grid_1-wide'              	=> 'u-p0 mdl-grid',
 		'grid_2c-r'    				=> 'u-p0 mdl-grid u-max-width u-flex-rev',
@@ -38,7 +38,7 @@ function rcdoc_setup() {
 		// CONTENT
 		'content'                 	=> 'mdl-cell mdl-grid u-m0 u-p0 u-1/1',
 		'content_with_sidebar'    	=> 'mdl-cell mdl-grid u-m0 u-p0 u-1/1 u-2/3@md',
-		//'content_archive'         	=> 'facetwp-template',
+		'content_archive'         	=> 'facetwp-template',
 		// ENTRY
 		'post'                    	=> 'mdl-cell u-mx0 u-1/1 mdl-card u-py4 u-px3 u-text-gray u-overflow-visible',
 		'post_archive'            	=> 'mdl-cell mdl-cell--6-col-desktop mdl-card mdl-shadow--2dp u-overflow-visible',
