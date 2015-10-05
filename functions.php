@@ -229,3 +229,19 @@ function query_post_type($query) {
 		}
 endif;
 }
+
+
+// Reload MDL after facet refresh
+function mdl_facet_refresh() {
+
+?>
+<script type="text/javascript">
+(function($) {
+    $(document).on('facetwp-loaded', function() {
+        componentHandler.upgradeAllRegistered();
+     });
+})(jQuery);
+</script>
+<?php
+}
+add_action( 'wp_footer', 'mdl_facet_refresh' );
