@@ -30,7 +30,7 @@ function rcdoc_setup() {
 		'grid_2c-l'    				=> 'u-p0 mdl-grid u-max-width',
 
 		// SITE HEADER
-		'header'                  	=> 'u-static mdl-layout__header mdl-layout__header--waterfall',
+		'header'                  	=> 'u-bg-1-glass u-static mdl-layout__header mdl-layout__header--waterfall',
 		'branding'                	=> 'mdl-layout__header-row',
 		'site_title'              	=> 'mdl-layout-title color-inherit',
 		//'site_description'        => 'h3 bold m0 muted',
