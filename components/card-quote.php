@@ -5,7 +5,7 @@
  * @package abraham
  */
 ?>
-<section class="u-bg-tint-3 u-text-white u-color-inherit u-1/1 mdl-cell mdl-card mdl-shadow--2dp">
+<section class="u-bg-tint-4 u-text-white u-color-inherit u-1/1 mdl-cell mdl-card mdl-shadow--2dp">
   <div class="mdl-card__title blockquote mdl-card--expand">
           <?php tha_entry_content_before(); ?>
           <?php the_content(); ?>
