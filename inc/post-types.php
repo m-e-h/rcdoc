@@ -1654,7 +1654,7 @@ function doc_chancerys_register_post_types() {
 			'menu_icon'           => 'dashicons-shield-alt',
 			'can_export'          => true,
 			'delete_with_user'    => false,
-			'hierarchical'        => false,
+			'hierarchical'        => true,
 			'taxonomies'          => array( 'category', 'post_tag' ),
 			'has_archive'         => 'chancerys',
 			'query_var'           => 'chancery',
