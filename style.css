@@ -10557,3 +10557,8 @@ button.simplefavorite-button
 
     margin-left: 5px;
 }
+
+.drawer-header
+{
+    min-height: 64px;
+}

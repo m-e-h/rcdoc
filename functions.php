@@ -18,8 +18,8 @@ function rcdoc_setup() {
 
 
 		'body'                    	=> '',
-		'site_container'          	=> 'mdl-layout mdl-js-layout mdl-layout--fixed-header',
-		'site_container_loggedin' 	=> 'mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer',
+		'site_container'          	=> 'mdl-layout mdl-js-layout mdl-layout--fixed-header u-bg-frost-2',
+		'site_container_loggedin' 	=> 'mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer u-bg-frost-2',
 		'layout'       		        => 'mdl-layout__content',
 		'layout_wide'   	        => 'mdl-layout__content',
 		'grid'              		=> 'u-p0 mdl-grid u-max-width',
@@ -31,7 +31,7 @@ function rcdoc_setup() {
 		'header'                  	=> 'u-bg-1-glass u-static mdl-layout__header mdl-layout__header--waterfall',
 		'branding'                	=> 'mdl-layout__header-row',
 		'site_title'              	=> 'mdl-layout-title color-inherit',
-		//'site_description'        => 'h3 bold m0 muted',
+		'site_description'        	=> 'h3 bold m0 muted',
 
 		// CONTENT
 		'content'                 	=> 'mdl-cell mdl-grid u-m0 u-p0 u-1/1',
@@ -42,10 +42,10 @@ function rcdoc_setup() {
 		'post_archive'            	=> 'mdl-cell mdl-cell--6-col-desktop mdl-card mdl-shadow--2dp u-overflow-visible',
         'post_featured'           	=> 'u-flexed-first u-1/1',
 
-		'page_header'             	=> 'u-1/1 u-text-center',
+		'page_header'             	=> 'page-header u-1/1 u-text-center',
 
 		'entry_title'             	=> 'mdl-card__title-text',
-		'page_title'    		  	=> 'u-h1 u-m0 u-py3',
+		'page_title'    		  	=> 'u-display-2 u-m0 u-py3',
 		'archive_description'     	=> '',
 
 		'entry_header'            	=> 'mdl-card__title',
@@ -115,7 +115,7 @@ function rcdoc_setup() {
 function wpmdl_scripts() {
 	wp_enqueue_script(
         'mdl-script',
-        '//storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js',
+        '//storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js',
         false, null, true
     );
 
@@ -125,14 +125,14 @@ function wpmdl_scripts() {
         false, false, true
     );
 
-	if (get_post_type() == 'parish') {
-        wp_enqueue_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false', array(), '3', true );
-        wp_enqueue_script(
-			'google-map-init',
-			trailingslashit(get_stylesheet_directory_uri())."assets/js/google-maps.js",
-			array('google-map', 'jquery'), '0.1', true
-		);
-    }
+	// if (get_post_type() == 'parish') {
+    //     wp_enqueue_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false', array(), '3', true );
+    //     wp_enqueue_script(
+	// 		'google-map-init',
+	// 		trailingslashit(get_stylesheet_directory_uri())."assets/js/google-maps.js",
+	// 		array('google-map', 'jquery'), '0.1', true
+	// 	);
+    // }
 }
 
 
@@ -158,7 +158,7 @@ function abraham_widgets() {
 		'name'          => __( 'Primary', 'abraham' ),
 		'before_title'  => '<div class="mdl-card__title u-mtn2 u-mxn2"><h2 class="mdl-card__title-text widget-title">',
 		'after_title'   => '</h2></div>',
-		'before_widget' => '<section class="mdl-card mdl-cell u-1/1 u-mx0 mdl-shadow--2dp u-p2 u-list-reset">',
+		'before_widget' => '<section class="mdl-card mdl-cell mdl-shadow--2dp u-p2 u-list-reset">',
 		'after_widget'  => '</section>',
 	));
 
