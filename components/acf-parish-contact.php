@@ -17,7 +17,7 @@ $map_link = "http://maps.google.com/maps?z=16&q=" . $address;
 
 
 $output = '<div itemscope itemtype="http://schema.org/Organization">';
-$output .= '<p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><a href="' . esc_url( $map_link ) . '" target="_blank">';
+$output .= '<p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><a href="' . esc_url( $map_link ) . '" target="_blank"><i class="material-icons map-marker">&#xE55F;</i>';
 ob_start();
 ?>
         <span itemprop="streetAddress">
