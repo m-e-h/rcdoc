@@ -35,10 +35,11 @@ add_action( 'wp_footer', 'mdl_facet_refresh' );
 function rcdoc_facet_parish_prox() {
 
     if ( is_post_type_archive('parish') ) {
-		echo '<div class="u-1/1 u-px3 u-pb0 u-pt3 u-flex u-flex-justify u-bg-frost-4 mdl-shadow--2dp">';
+		echo '<div class="u-1/1 u-px3 u-pb0 u-pt3 u-flex u-flex-wrap u-flex-justify u-bg-frost-4 mdl-shadow--2dp">';
 		echo facetwp_display( 'facet', 'parish_proximity' );
-		echo '<div class="u-1/1">' .facetwp_display( 'facet', 'title_alpha' ). '</div>';
-		echo '<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="FWP.reset()">Reset</button></div>';
+		echo '<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="FWP.reset()">Reset</button>';
+		echo '<div class="u-1/1 u-text-center">' .facetwp_display( 'facet', 'title_alpha' ). '</div>';
+		echo '</div>';
     }
 
 }
