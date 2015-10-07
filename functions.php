@@ -1,8 +1,5 @@
 <?php
 
-//use Bempress\AttrTrumps;
-
-
 
 add_action( 'after_setup_theme', 'rcdoc_setup' );
 add_action( 'wp_enqueue_scripts', 'wpmdl_scripts' );
@@ -12,6 +9,7 @@ add_action( 'tha_header_before', 'header_right_widget' );
 
 require get_stylesheet_directory() . '/inc/post-types.php';
 require get_stylesheet_directory() . '/inc/taxonomies.php';
+require get_stylesheet_directory() . '/inc/compatibility.php';
 
 
 
@@ -213,35 +211,3 @@ function mdl_search_form() {
 function header_right_widget() {
 	return hybrid_get_sidebar('header-right');
 }
-
-// Let custom post types use the categories
-add_filter('pre_get_posts', 'query_post_type');
-function query_post_type($query) {
-	if ( ! is_admin() && $query->is_main_query() ) :
-		if(is_category() || is_tag()) {
-		    $post_type = get_query_var('post_type');
-		    if($post_type)
-		        $post_type = $post_type;
-		    else
-		        $post_type = array('post','multicultural','chancery','vocation'); // replace cpt to your custom post type
-		    $query->set('post_type',$post_type);
-		    return $query;
-		}
-endif;
-}
-
-
-// Reload MDL after facet refresh
-function mdl_facet_refresh() {
-
-?>
-<script type="text/javascript">
-(function($) {
-    $(document).on('facetwp-loaded', function() {
-        componentHandler.upgradeAllRegistered();
-     });
-})(jQuery);
-</script>
-<?php
-}
-add_action( 'wp_footer', 'mdl_facet_refresh' );

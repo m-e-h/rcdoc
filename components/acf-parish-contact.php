@@ -1,29 +1,44 @@
 <?php
+/**
+ * Contact fields for parishes
+ */
 ?>
 
+<?php
 
 
-<div itemscope itemtype="http://schema.org/Organization">
-    <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+$address = get_field('doc_street') . "+" . get_field('doc_city') . "+" . get_field('doc_state') . "+" . get_field('doc_zip');
+
+
+
+$map_link = "http://maps.google.com/maps?z=16&q=" . $address;
+
+
+
+
+$output = '<div itemscope itemtype="http://schema.org/Organization">';
+$output .= '<p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><a href="' . esc_url( $map_link ) . '" target="_blank">';
+ob_start();
+?>
         <span itemprop="streetAddress">
             <?php the_field('doc_street'); ?><br>
             <?php the_field('doc_street_2'); ?>
         </span>
         <span itemprop="addressLocality"><?php the_field('doc_city'); ?>, <?php the_field('doc_state'); ?></span>
         <span itemprop="postalCode"><?php the_field('doc_zip'); ?></span>
-    </p>
-    <p itemprop="telephone"><i class="u-align-middle material-icons">&#xE0CD;</i> <?php the_field('doc_phone_number'); ?></p>
-    <p itemprop="faxNumber"><i class="u-bold u-align-middle">FAX</i> <?php the_field('doc_fax'); ?></p>
-    <p itemprop="email"><i class="u-align-middle material-icons">&#xE0BE;</i> <?php the_field('doc_email'); ?></p>
-</div>
 
 <?php
+$output .= ob_get_clean();
+$output .= '</a></p>';
+ob_start(); ?>
+    <p itemprop="telephone"><a href="tel:<?php the_field('doc_phone_number'); ?>"><i class="u-align-middle material-icons">&#xE0CD;</i> <?php the_field('doc_phone_number'); ?></a></p>
+    <p itemprop="faxNumber"><i class="u-bold u-align-middle">FAX</i> <?php the_field('doc_fax'); ?></p>
+    <p itemprop="email"><a href="mailto:<?php the_field('doc_email'); ?>"><i class="u-align-middle material-icons">&#xE0BE;</i> <?php the_field('doc_email'); ?></a></p>
+<?php
+$output .= ob_get_clean();
+$output .= '</div>';
 
-$location = get_field('doc_map');
 
-if( !empty($location) ):
-?>
-<div class="acf-map">
-	<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
-</div>
-<?php endif; ?>
+
+
+echo $output;
