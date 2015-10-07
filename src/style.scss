@@ -197,3 +197,35 @@ button.simplefavorite-button {
     border: #ccc solid 1px;
     margin: 20px 0;
 }
+
+
+
+
+
+.svg-logo {
+    height: 125px;
+    transition: all .25s;
+}
+
+.mdl-layout-title {
+    margin-left: 145px;
+    font-size: 30px;
+    transition: all .25s;
+}
+
+.is-compact .svg-logo {
+    height: 58px;
+}
+
+.logo-image {
+    position: absolute;
+}
+
+.is-compact .logo-image {
+    position: relative;
+}
+
+.is-compact .mdl-layout-title {
+    margin-left: 5px;
+    font-size: 20px;
+}
