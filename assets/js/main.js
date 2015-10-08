@@ -40,3 +40,11 @@ componentHandler.register({
     classAsString: 'DropPanel',
     cssClass: 'js-drop-panel'
 });
+
+
+
+
+
+var portrait = document.querySelector('.portrait');
+var parent = portrait.parentNode;
+parent.classList.add('some-class');
