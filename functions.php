@@ -4,7 +4,7 @@
 add_action( 'after_setup_theme', 'rcdoc_setup' );
 add_action( 'wp_enqueue_scripts', 'wpmdl_scripts' );
 add_action( 'tha_header_after', 'logged_in_drawer' );
-add_action( 'tha_header_bottom', 'mdl_search_form' );
+//add_action( 'tha_header_bottom', 'mdl_search_form' );
 add_action( 'tha_header_before', 'header_right_widget' );
 
 require get_stylesheet_directory() . '/inc/post-types.php';
@@ -30,8 +30,8 @@ function rcdoc_setup() {
 		// SITE HEADER
 		'header'                  	=> 'u-bg-1-glass u-static mdl-layout__header mdl-layout__header--waterfall',
 		'branding'                	=> 'mdl-layout__header-row',
-		'site_title'              	=> 'mdl-layout-title color-inherit',
-		'site_description'        	=> 'h3 bold m0 muted',
+		'site_title'              	=> 'mdl-layout-title color-inherit u-m0 u-h1',
+		'site_description'        	=> 'site-description u-h1 u-m0 u-text-3 hidden@sm',
 
 		// CONTENT
 		'content'                 	=> 'mdl-cell mdl-grid u-m0 u-p0 u-1/1',

@@ -199,38 +199,43 @@ button.simplefavorite-button {
 }
 
 
+.svg-logo, .is-compact .svg-logo {
+    height: 50px;
+}
 
-
-
+@media screen and (min-width: 760px) {
 .svg-logo {
-    height: 125px;
+    height: 100px;
     transition: all .25s;
 }
 
 .mdl-layout-title {
-    margin-left: 145px;
+//    margin-left: 145px;
     font-size: 30px;
     transition: all .25s;
-}
-
-.is-compact .svg-logo {
-    height: 58px;
-}
-
-.logo-image {
-    position: absolute;
-}
-
-.is-compact .logo-image {
-    position: relative;
 }
 
 .is-compact .mdl-layout-title {
     margin-left: 5px;
     font-size: 20px;
 }
-
+}
 
 .drawer-header {
     min-height: 64px;
+}
+
+// .is-compact .title-text {
+//     flex-direction: column!important;
+// }
+
+.is-compact .title-text {
+    font-size: 0!important;
+    opacity: 0;
+    max-width: 1px!important;
+}
+
+
+.logo-image {
+    align-self: flex-start;
 }

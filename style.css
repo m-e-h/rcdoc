@@ -10518,47 +10518,53 @@ button.simplefavorite-button
     border: #ccc solid 1px;
 }
 
-.svg-logo
-{
-    height: 125px;
-
-    -webkit-transition: all .25s;
-            transition: all .25s;
-}
-
-.mdl-layout-title
-{
-    font-size: 30px;
-
-    margin-left: 145px;
-
-    -webkit-transition: all .25s;
-            transition: all .25s;
-}
-
+.svg-logo,
 .is-compact .svg-logo
 {
-    height: 58px;
+    height: 50px;
 }
 
-.logo-image
+@media screen and (min-width: 760px)
 {
-    position: absolute;
-}
+    .svg-logo
+    {
+        height: 100px;
 
-.is-compact .logo-image
-{
-    position: relative;
-}
+        -webkit-transition: all .25s;
+                transition: all .25s;
+    }
+    .mdl-layout-title
+    {
+        font-size: 30px;
 
-.is-compact .mdl-layout-title
-{
-    font-size: 20px; 
+        -webkit-transition: all .25s;
+                transition: all .25s;
+    }
+    .is-compact .mdl-layout-title
+    {
+        font-size: 20px; 
 
-    margin-left: 5px;
+        margin-left: 5px;
+    }
 }
 
 .drawer-header
 {
     min-height: 64px;
+}
+
+.is-compact .title-text
+{
+    font-size: 0 !important;
+
+    max-width: 1px !important; 
+
+    opacity: 0;
+}
+
+.logo-image
+{
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+            align-self: flex-start;
 }
