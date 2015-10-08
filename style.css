@@ -10568,3 +10568,52 @@ button.simplefavorite-button
     -ms-flex-item-align: start;
             align-self: flex-start;
 }
+
+.nav-links
+{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+            justify-content: space-around;
+}
+
+.post-navigation
+{
+    width: 100%;
+}
+
+.pagination > .nav-links
+{
+    max-width: 300px;
+    margin: 0 auto; 
+
+    color: #fff;
+
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+            align-items: center;
+}
+.pagination > .nav-links a
+{
+    color: #fff;
+}
+
+.facetwp-type-proximity
+{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex; 
+
+    margin-bottom: 40px;
+}
+
+select#facetwp-radius
+{
+    width: 72px;
+}

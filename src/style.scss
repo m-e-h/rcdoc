@@ -239,3 +239,33 @@ button.simplefavorite-button {
 .logo-image {
     align-self: flex-start;
 }
+
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+}
+
+.post-navigation {
+    width: 100%;
+}
+
+.pagination > .nav-links {
+    max-width: 300px;
+    color: #fff;
+    align-items: center;
+    margin: 0 auto;
+    a {
+        color: #fff;
+    }
+}
+
+
+.facetwp-type-proximity {
+    margin-bottom: 40px;
+    display: flex;
+}
+
+select#facetwp-radius {
+    width: 72px;
+}

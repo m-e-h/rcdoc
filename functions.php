@@ -30,7 +30,7 @@ function rcdoc_setup() {
 		// SITE HEADER
 		'header'                  	=> 'u-bg-1-glass u-static mdl-layout__header mdl-layout__header--waterfall',
 		'branding'                	=> 'mdl-layout__header-row',
-		'site_title'              	=> 'mdl-layout-title color-inherit u-m0 u-h1',
+		'site_title'              	=> 'mdl-layout-title color-inherit u-m0 u-h1 u-z4',
 		'site_description'        	=> 'site-description u-h1 u-m0 u-text-3 hidden@sm',
 
 		// CONTENT
