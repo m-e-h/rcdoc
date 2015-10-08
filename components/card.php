@@ -10,6 +10,7 @@
         get_the_image(array(
             'size' => 'abraham-lg',
             'image_class' => 'mdl-card__media',
+            'link_to_post' => false,
         ));
     ?>
         <header <?php hybrid_attr('entry-header'); ?>>
