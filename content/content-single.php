@@ -36,17 +36,6 @@
 
     <?php tha_content_while_after(); ?>
 
-    <?php
-    the_post_navigation( array(
-        'next_text' =>  '<span class="u-text-white post-title">%title</span>' .
-            '<span class="screen-reader-text">' . __( 'Next post:', 'twentysixteen' ) . '</span> ' .
-            '<span class="meta-nav mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored" aria-hidden="true"><i class="material-icons">&#xE409;</i></span> ',
-        'prev_text' => '<span class="meta-nav mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored" aria-hidden="true"><i class="material-icons">&#xE408;</i></span> ' .
-            '<span class="screen-reader-text">' . __( 'Previous post:', 'twentysixteen' ) . '</span> ' .
-            '<span class="u-text-white post-title">%title</span>',
-    ) );
-    ?>
-
     <?php get_template_part('components/loop', get_the_slug() ); ?>
 
 <?php
